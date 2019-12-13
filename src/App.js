@@ -5,7 +5,7 @@ import Button from './Button';
 
 import './app.scss';
 
-import { NavigationPublishFavorite16px } from '@mozaic-ds/icons/react';
+//import { NavigationPublishFavorite16px } from '@mozaic-ds/icons/react';
 
 function App() {
 	return (
@@ -20,7 +20,7 @@ function App() {
 			<Button size="s">bonsoir</Button>
 			<Button size="l">bonsoir</Button>
 			<Button full>bonsoir</Button>
-			<Button icon={NavigationPublishFavorite16px}>dfsdfs</Button>
+			{/*<Button icon={NavigationPublishFavorite16px}>dfsdfs</Button>*/}
 		</div>
 	);
 }
