@@ -5,14 +5,22 @@ import Button from './Button';
 
 import './app.scss';
 
+import { NavigationPublishFavorite16px } from '@mozaic-ds/icons/react';
+
 function App() {
 	return (
 		<div className="app">
 			<Button>bonsoir</Button>
 			<Button bordered>bonsoir</Button>
-			<Button variant="primary-02">bonsoir</Button>
-			<Button variant="neutral" className="button-test">bonsoir</Button>
+			<Button bordered variant="primary-02">
+				bonsoir
+			</Button>
+			<Button variant="neutral">bonsoir</Button>
 			<Button variant="danger">bonsoir</Button>
+			<Button size="s">bonsoir</Button>
+			<Button size="l">bonsoir</Button>
+			<Button full>bonsoir</Button>
+			<Button icon={NavigationPublishFavorite16px}>dfsdfs</Button>
 		</div>
 	);
 }
