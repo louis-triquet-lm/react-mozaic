@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'Button';
 import Select from '../Select';
 import TextInput from '../TextInput';
+import Checkbox from '../Checkbox';
 
 export default { title: 'Button' };
 
@@ -18,6 +19,7 @@ const Basic = () => {
 	const [ variant, setVariant ] = useState('primary');
 	const [ size, setSize ] = useState('m');
 	const [ text, setText ] = useState('Sample text');
+	const [ full, setFull ] = useState(false);
 
 	return (
 		<div className="button-story">
@@ -25,8 +27,9 @@ const Basic = () => {
 				<Select options={variantOptions} value={variant} onChange={setVariant} />
 				<Select options={sizeOptions} value={size} onChange={setSize} />
 				<TextInput value={text} onChange={setText} />
+				<Checkbox checked={full} onChange={setFull} name="full" />
 			</div>
-			<Button {...{ variant, size }}>{text}</Button>
+			<Button {...{ variant, size, full }}>{text}</Button>
 		</div>
 	);
 };

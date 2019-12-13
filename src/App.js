@@ -42,7 +42,7 @@ function App() {
 			</Button>
 			<Button Icon={NavigationPublishFavorite16px} />
 			<Select options={options} value={value} onChange={onChange} searchable />
-			<Checkbox checked={full} onChange={setFull} />
+			<Checkbox checked={full} onChange={setFull} name="full" />
 			<TextInput value={text} onChange={setText} />
 			<TextInput Icon={NavigationPublishFavorite16px} value={text} onChange={setText} />
 		</div>

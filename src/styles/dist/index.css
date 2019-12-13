@@ -827,3 +827,26 @@
 .mc-select.is-valid {
   border-color: #78be20;
 }
+.rm-checkbox {
+  font-family: 'LeroyMerlin', sans-serif;
+  font-weight: 400;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.rm-checkbox .rm-checkbox__item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  list-style-type: none;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.rm-checkbox .rm-checkbox__label {
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-left: solid 1px #d3d2d6;
+}

@@ -8,3 +8,23 @@ $local-config: (font-path: '/fonts',
 @import 'components/_c.text-input';
 @import 'components/_c.left-icon-input';
 @import 'components/_c.select';
+
+.rm-checkbox {
+    @include set-font-face('regular');
+    margin: $mu200 auto;
+    padding: 0 $mu200;
+    width: fit-content;
+
+    .rm-checkbox__item {
+        @include set-flexy;
+        list-style-type: none;
+        margin: $mu100 0;
+        text-align: center;
+    }
+
+    .rm-checkbox__label {
+        padding-left: $mu100;
+        margin-left: $mu100;
+        border-left: solid 1px $color-grey-200;
+    }
+}
