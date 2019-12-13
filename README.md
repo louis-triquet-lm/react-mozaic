@@ -1,0 +1,4 @@
+- Problème de nom de package npm @mozaic-ds/sketch-librairies au lieu de libraries
+- Pas d'indications pour l'utilisation dans une app React. Tuto utilisé et adapté:
+  - https://dev.to/puritanic/add-postcss-to-create-react-app--5hj8
+- 
