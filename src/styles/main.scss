@@ -4,16 +4,7 @@ $local-config: (font-path: '/fonts',
 @import 'settings-tools/_all-settings';
 @include import-font-families();
 @import 'components/_c.button';
-
-body {
-    /*
-    @include set-font-face('semi-bold');
-    @include set-font-scale('12', 's');
-    background-color: $color-primary-01-500;
-    color: $color-font-darker;
-    text-align: center;
-    margin: 0;
-    padding: $mu500;
-    */
-
-}
+@import 'components/_c.checkbox';
+@import 'components/_c.text-input';
+@import 'components/_c.left-icon-input';
+@import 'components/_c.select';

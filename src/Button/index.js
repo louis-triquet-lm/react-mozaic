@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import 'styles/dist/index.css'
+
+import 'styles/dist/index.css';
 
 const prefix = 'mc-button--';
 
-const Button = ({ children, bordered, variant, size, full, className, icon, iconRight, ...props }) => {
+const Button = ({ children, bordered, variant, size, full, className, Icon, iconRight, ...props }) => {
 	const [ variantClass, setVariantClass ] = useState('');
 	const [ sizeClass, setSizeClass ] = useState('');
 
@@ -25,35 +26,46 @@ const Button = ({ children, bordered, variant, size, full, className, icon, icon
 		[ size ]
 	);
 
+	const icon = Icon ? <Icon className="mc-button__icon  mc-button__icon--m" /> : null;
+	const isIconButton = Icon && !children;
+
 	return (
 		<button
-			className={classNames('mc-button', sizeClass, variantClass, { [`${prefix}full`]: full }, className)}
+			className={classNames(
+				'mc-button',
+				sizeClass,
+				variantClass,
+				{ [`${prefix}full`]: full, 'mc-button--square': isIconButton },
+				className
+			)}
 			{...props}
 		>
-			{icon && icon}
-			<span class="mc-button__label">{children}</span>
+			{!iconRight && icon}
+			{children && <span className="mc-button__label">{children}</span>}
+			{iconRight && icon}
 		</button>
 	);
 };
 
 Button.propTypes = {
-	children: PropTypes.oneOfType([ PropTypes.arrayOf(PropTypes.node), PropTypes.node ]).isRequired,
+	children: PropTypes.oneOfType([ PropTypes.arrayOf(PropTypes.node), PropTypes.node ]),
 	bordered: PropTypes.bool,
 	full: PropTypes.bool,
 	variant: PropTypes.string,
 	className: PropTypes.string,
 	size: PropTypes.string,
-	icon: PropTypes.string,
+	Icon: PropTypes.func,
 	iconRight: PropTypes.bool,
 };
 
 Button.defaultProps = {
+	children: null,
 	bordered: false,
 	full: false,
 	variant: '',
 	className: '',
 	size: '',
-	icon: '',
+	Icon: null,
 	iconRight: false,
 };
 
