@@ -1,0 +1,29 @@
+.button-story {
+    .settings {
+        display: flex;
+        align-items: center;
+        border: 1px solid lightgrey;
+        padding: 20px;
+
+        .rm-select {
+            width: 200px;
+            margin: 0 20px;
+        }
+
+        .rm-text-input {
+            margin: 0 20px;
+            width: 200px;
+        }
+
+        .rm-checkbox {
+            margin: 0 20px;
+        }
+    }
+
+    .sandbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+    }
+}

@@ -10,7 +10,11 @@ const Input = ({ value, onChange, valid, invalid, className, ...props }) => {
 	};
 	return (
 		<input
-			className={classNames('mc-text-input', { 'is-valid': valid, 'is-invalid': invalid }, className)}
+			className={classNames(
+				'rm-text-input mc-text-input',
+				{ 'is-valid': valid, 'is-invalid': invalid },
+				className
+			)}
 			value={value}
 			onChange={handleChange}
 			{...props}
@@ -32,31 +36,31 @@ Input.propTypes = {
 	className: PropTypes.string,
 	valid: PropTypes.bool,
 	invalid: PropTypes.bool,
-	onChange: PropTypes.func.isRequired,
+	onChange: PropTypes.func.isRequired
 };
 
 Input.defaultProps = {
 	value: '',
 	className: '',
 	valid: false,
-	invalid: false,
+	invalid: false
 };
 
 LeftIconInput.propTypes = {
 	Icon: PropTypes.func.isRequired,
-	className: PropTypes.string,
+	className: PropTypes.string
 };
 
 LeftIconInput.defaultProps = {
-	className: '',
+	className: ''
 };
 
 TextInput.propTypes = {
-	Icon: PropTypes.func,
+	Icon: PropTypes.func
 };
 
 TextInput.defaultProps = {
-	Icon: null,
+	Icon: null
 };
 
 export default TextInput;

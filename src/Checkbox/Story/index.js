@@ -1,0 +1,24 @@
+import React, { useState } from 'react';
+import TextInput from 'TextInput';
+import Checkbox from 'Checkbox';
+
+import './story.scss';
+
+const ButtonStory = () => {
+	const [ invalid, setInvalid ] = useState(false);
+	const [ name, setName ] = useState('Sample label');
+
+	return (
+		<div className="button-story">
+			<div className="settings">
+				<Checkbox checked={invalid} onChange={setInvalid} name="Invalid" />
+				<TextInput value={name} onChange={setName} />
+			</div>
+			<div className="sandbox">
+				<Checkbox {...{ invalid, name }} />
+			</div>
+		</div>
+	);
+};
+
+export default ButtonStory;

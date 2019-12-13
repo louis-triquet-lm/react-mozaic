@@ -21,7 +21,7 @@ const Select = ({ value, onChange, options, className, placeholder, clearable, s
 
 	return (
 		<ReactSelect
-			className={classNames('select', className)}
+			className={classNames('rm-select', className)}
 			classNamePrefix="select"
 			isClearable={clearable}
 			isSearchable={searchable}
@@ -41,7 +41,7 @@ Select.propTypes = {
 	className: PropTypes.string,
 	placeholder: PropTypes.string,
 	clearable: PropTypes.bool,
-	searchable: PropTypes.bool
+	searchable: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -50,7 +50,7 @@ Select.defaultProps = {
 	className: '',
 	placeholder: '',
 	clearable: false,
-	searchable: false
+	searchable: false,
 };
 
 export default Select;

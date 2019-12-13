@@ -11,14 +11,13 @@ $local-config: (font-path: '/fonts',
 
 .rm-checkbox {
     @include set-font-face('regular');
-    margin: $mu200 auto;
-    padding: 0 $mu200;
     width: fit-content;
+    display: inline-flex;
+    align-items: center;
 
     .rm-checkbox__item {
         @include set-flexy;
         list-style-type: none;
-        margin: $mu100 0;
         text-align: center;
     }
 

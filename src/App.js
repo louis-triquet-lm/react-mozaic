@@ -1,31 +1,17 @@
-import React, { useState } from 'react';
-import Button from './Button';
-import Select from './Select';
-import TextInput from './TextInput';
-
+import React from 'react';
 import './app.scss';
 
-import { NavigationPublishFavorite16px } from 'Icons';
-import Checkbox from './Checkbox';
+import ButtonStory from 'Button/Story';
+import CheckboxStory from 'Checkbox/Story';
+import TextInputStory from 'TextInput/Story';
 
 function App() {
-	const [ text, setText ] = useState('sdfsdfsdf');
-	const [ value, setValue ] = useState('test2');
-	const [ full, setFull ] = useState(false);
-	const onChange = (value, option) => {
-		console.log('select change', value, option);
-		setValue(value);
-	};
-
-	const options = [
-		{ label: 'test1', value: 'test1' },
-		{ label: 'test2', value: 'test2' },
-		{ label: 'test3', value: 'test3' },
-		{ label: 'test4', value: 'test4' },
-	];
-
 	return (
 		<div className="app">
+			<ButtonStory />
+			<CheckboxStory />
+			<TextInputStory />
+			{/*
 			<Button>bonsoir</Button>
 			<Button bordered>bonsoir</Button>
 			<Button bordered variant="primary-02">
@@ -45,6 +31,7 @@ function App() {
 			<Checkbox checked={full} onChange={setFull} name="full" />
 			<TextInput value={text} onChange={setText} />
 			<TextInput Icon={NavigationPublishFavorite16px} value={text} onChange={setText} />
+            */}
 		</div>
 	);
 }
