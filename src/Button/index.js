@@ -12,7 +12,10 @@ const Button = ({ children, bordered, variant, size, full, className, Icon, icon
 
 	useEffect(
 		() => {
-			const variantClass = `${prefix}${bordered ? 'bordered' : 'solid'}${variant ? `-${variant}` : ''}`;
+			console.log('variant effect', variant);
+			const variantClass = `${prefix}${bordered ? 'bordered' : 'solid'}${variant && variant !== 'primary'
+				? `-${variant}`
+				: ''}`;
 			setVariantClass(variantClass);
 		},
 		[ bordered, variant ]

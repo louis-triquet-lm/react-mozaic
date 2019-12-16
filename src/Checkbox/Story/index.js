@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import TextInput from 'TextInput';
 import Checkbox from 'Checkbox';
 
-import './story.scss';
-
 const ButtonStory = () => {
 	const [ invalid, setInvalid ] = useState(false);
 	const [ name, setName ] = useState('Sample label');

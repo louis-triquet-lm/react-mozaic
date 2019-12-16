@@ -3,8 +3,6 @@ import TextInput from 'TextInput';
 import Checkbox from 'Checkbox';
 import { NavigationPublishFavorite16px } from 'Icons';
 
-import './story.scss';
-
 const ButtonStory = () => {
 	const [ valid, setValid ] = useState(false);
 	const [ invalid, setInvalid ] = useState(false);
