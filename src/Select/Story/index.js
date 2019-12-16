@@ -14,15 +14,17 @@ const SelectStory = () => {
 	const [ valid, setValid ] = useState(false);
 	const [ invalid, setInvalid ] = useState(false);
 	const [ value, onChange ] = useState('Sample text');
+	const [ searchable, setSearchable ] = useState(false);
 
 	return (
 		<div className="button-story">
 			<div className="settings">
 				<Checkbox checked={valid} onChange={setValid} name="Valid" />
 				<Checkbox checked={invalid} onChange={setInvalid} name="Invalid" />
+				<Checkbox checked={searchable} onChange={setSearchable} name="Searchable" />
 			</div>
 			<div className="sandbox">
-				<Select {...{ options, value, onChange }} />
+				<Select {...{ options, value, onChange, searchable, valid, invalid }} />
 			</div>
 		</div>
 	);

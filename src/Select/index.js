@@ -1,12 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactSelect from 'react-select';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import 'styles/dist/index.css';
+import './select.scss';
 
-const Select = ({ value, onChange, options, className, placeholder, clearable, searchable, ...props }) => {
+const Select = ({
+	value,
+	onChange,
+	options,
+	className,
+	placeholder,
+	clearable,
+	searchable,
+	valid,
+	invalid,
+	...props
+}) => {
 	const [ selectValue, setSelectValue ] = useState();
+
+	const ref = useRef();
 	useEffect(
 		() => {
 			options && setSelectValue(options.find((opt) => opt.value === value));
@@ -21,7 +35,7 @@ const Select = ({ value, onChange, options, className, placeholder, clearable, s
 
 	return (
 		<ReactSelect
-			className={classNames('rm-select', className)}
+			className={classNames('rm-select', { 'is-valid': valid, 'is-invalid': invalid }, className)}
 			classNamePrefix="select"
 			isClearable={clearable}
 			isSearchable={searchable}
@@ -29,6 +43,7 @@ const Select = ({ value, onChange, options, className, placeholder, clearable, s
 			value={selectValue}
 			onChange={handleChange}
 			placeholder={placeholder}
+			ref={ref}
 			{...props}
 		/>
 	);
@@ -41,7 +56,7 @@ Select.propTypes = {
 	className: PropTypes.string,
 	placeholder: PropTypes.string,
 	clearable: PropTypes.bool,
-	searchable: PropTypes.bool,
+	searchable: PropTypes.bool
 };
 
 Select.defaultProps = {
@@ -50,7 +65,7 @@ Select.defaultProps = {
 	className: '',
 	placeholder: '',
 	clearable: false,
-	searchable: false,
+	searchable: false
 };
 
 export default Select;
