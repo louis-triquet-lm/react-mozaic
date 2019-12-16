@@ -848,6 +848,7 @@
   padding-left: 1rem;
   margin-left: 1rem;
   border-left: solid 1px #d3d2d6;
+  cursor: pointer;
 }
 
 .rm-select {
@@ -857,6 +858,8 @@
 }
 
 .rm-select .select__control {
+  font-family: 'LeroyMerlin', sans-serif;
+  font-weight: 400;
   box-sizing: border-box;
   outline: none;
   -webkit-appearance: none;
@@ -868,7 +871,7 @@
   border: none;
   font-size: 1rem;
   line-height: 1.5;
-  background: #ffffff url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyMjIwMjAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+") right 1rem center no-repeat;
+  background: #ffffff url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyMjIwMjAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
   background-size: 1.5rem;
   border: 1px solid #6f676c;
   border-radius: 4px;
@@ -878,32 +881,22 @@
   transition: border-color ease 200ms;
 }
 
-.rm-select .select__control.is-hover, .rm-select .select__control:hover {
+.rm-select .select__control.is-hover,
+.rm-select .select__control:hover {
   border-color: #222020;
 }
 
-.rm-select .select__control.is-focus, .rm-select .select__control:focus {
+.rm-select .select__control.is-focus,
+.rm-select .select__control:focus {
   border-color: #25a8d0;
 }
 
-.rm-select .select__control:disabled {
-  background: #eeeef0 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM4ODdmODciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+") right 1rem center no-repeat;
+.rm-select.select--is-disabled .select__control {
+  background: #eeeef0 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM4ODdmODciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
   background-size: 1.5rem;
   border-color: #eeeef0;
   color: #887f87;
   cursor: default;
-}
-
-.rm-select .select__control.is-invalid {
-  border-color: #df382b;
-}
-
-.rm-select .select__control.is-valid {
-  border-color: #78be20;
-}
-
-.rm-select .select__control .select__indicator {
-  display: none;
 }
 
 .rm-select.is-invalid .select__control {

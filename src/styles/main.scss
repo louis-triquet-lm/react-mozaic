@@ -25,6 +25,7 @@ $local-config: (font-path: '/fonts',
         padding-left: $mu100;
         margin-left: $mu100;
         border-left: solid 1px $color-grey-200;
+        cursor: pointer;
     }
 }
 
@@ -34,52 +35,41 @@ $local-config: (font-path: '/fonts',
     font-weight: 400;
 
     .select__control {
-        box-sizing: border-box;
-        outline: none;
-        appearance: none;
-        padding: 0;
-        margin: 0;
-        box-shadow: none;
-        border: none;
-        font-size: 1rem;
-        line-height: 1.5;
-        background: $color-grey-000 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyMjIwMjAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
-        background-size: 1.5rem;
-        border: 1px solid $color-grey-600;
-        border-radius: 4px;
-        color: $color-grey-900;
+        @include reset-input;
+        @include set-font-scale('05');
+        @include select-background-arrow();
+
+        border: $select-border-width solid $color-input-border;
+        border-radius: $select-border-radius;
+        color: $color-input-text;
         width: 100%;
-        padding: calc(0.75rem - 0.125em - 1px) 0.75rem calc(0.75rem + 0.125em - 1px);
+        // remove border height and center baseline optically
+        padding: calc(#{$mu075} - 0.125em - #{$select-border-width}) $mu075 calc(#{$mu075} + 0.125em - #{$select-border-width});
         transition: border-color ease 200ms;
 
-        &.is-hover,
         &:hover {
-            border-color: $color-grey-900;
+            @include add-demo-state-class {
+                border-color: $color-input-hover-border;
+            }
         }
 
-        &.is-focus,
         &:focus {
-            border-color: $color-info-500;
+            @include add-demo-state-class {
+                border-color: $color-input-focus-border;
+            }
         }
 
-        &:disabled {
-            background: $color-grey-100 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM4ODdmODciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
-            background-size: 1.5rem;
-            border-color: $color-grey-100;
-            color: $color-grey-500;
+        .dropdown-indicator {}
+    }
+
+    &.select--is-disabled {
+        .select__control {
+            @include select-background-arrow($color-input-placeholder,
+                $color-input-disabled-background);
+
+            border-color: $color-input-disabled-border;
+            color: $color-input-placeholder;
             cursor: default;
-        }
-
-        &.is-invalid {
-            border-color: $color-danger-500;
-        }
-
-        &.is-valid {
-            border-color: $color-success-500;
-        }
-
-        .select__indicator {
-            display: none;
         }
     }
 

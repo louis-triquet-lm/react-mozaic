@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -20,12 +20,17 @@ export const CheckboxInput = ({ checked, onChange, invalid, ...props }) => {
 	);
 };
 
-const Checkbox = ({ className, name, ...props }) => (
-	<span className={classNames('rm-checkbox', className)}>
-		<CheckboxInput {...props} />
-		<label className="rm-checkbox__label">{name}</label>
-	</span>
-);
+const Checkbox = ({ className, name, ...props }) => {
+	const id = useRef(`chk${Math.round(Math.random() * 10000)}`);
+	return (
+		<span className={classNames('rm-checkbox', className)}>
+			<CheckboxInput id={id.current} {...props} />
+			<label for={id.current} className="rm-checkbox__label">
+				{name}
+			</label>
+		</span>
+	);
+};
 
 CheckboxInput.propTypes = {
 	checked: PropTypes.bool,

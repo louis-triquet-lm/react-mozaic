@@ -6,6 +6,9 @@ import classNames from 'classnames';
 import 'styles/dist/index.css';
 import './select.scss';
 
+const DropdownIndicator = ({ innerProps, isDisabled }) =>
+	!isDisabled ? <div {...innerProps} className="dropdown-indicator" /> : null;
+
 const Select = ({
 	value,
 	onChange,
@@ -16,11 +19,11 @@ const Select = ({
 	searchable,
 	valid,
 	invalid,
+	disabled,
 	...props
 }) => {
 	const [ selectValue, setSelectValue ] = useState();
 
-	const ref = useRef();
 	useEffect(
 		() => {
 			options && setSelectValue(options.find((opt) => opt.value === value));
@@ -39,11 +42,12 @@ const Select = ({
 			classNamePrefix="select"
 			isClearable={clearable}
 			isSearchable={searchable}
+			isDisabled={disabled}
 			options={options}
 			value={selectValue}
 			onChange={handleChange}
 			placeholder={placeholder}
-			ref={ref}
+			components={{ DropdownIndicator }}
 			{...props}
 		/>
 	);
