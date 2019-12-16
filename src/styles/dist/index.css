@@ -849,3 +849,10 @@
   margin-left: 1rem;
   border-left: solid 1px #d3d2d6;
 }
+
+.rm-select .select__control {
+  /*
+        min-height: magic-unit-rem(20);
+        min-width: magic-unit-rem(20);
+        padding: magic-unit-rem(2) 0;*/
+}

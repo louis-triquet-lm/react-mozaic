@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'Select';
 import TextInput from 'TextInput';
 import Checkbox from 'Checkbox';
@@ -20,6 +20,15 @@ const ButtonStory = () => {
 	const [ size, setSize ] = useState('m');
 	const [ text, setText ] = useState('Sample text');
 	const [ full, setFull ] = useState(false);
+	const [ sample, setSample ] = useState('');
+
+	useEffect(
+		() => {
+			const sample = `<Button variant="${variant}" size="${size}">${text}</Button>`;
+			setSample(sample);
+		},
+		[ size, text, variant ]
+	);
 
 	return (
 		<div className="button-story">
@@ -31,6 +40,7 @@ const ButtonStory = () => {
 			</div>
 			<div className="sandbox">
 				<Button {...{ variant, size, full }}>{text}</Button>
+				<textarea value={sample} />
 			</div>
 		</div>
 	);

@@ -4,13 +4,17 @@ import './app.scss';
 import ButtonStory from 'Button/Story';
 import CheckboxStory from 'Checkbox/Story';
 import TextInputStory from 'TextInput/Story';
+import SelectStory from 'Select/Story';
 
 function App() {
 	return (
 		<div className="app">
 			<ButtonStory />
+			{/*
 			<CheckboxStory />
 			<TextInputStory />
+            */}
+			<SelectStory />
 			{/*
 			<Button>bonsoir</Button>
 			<Button bordered>bonsoir</Button>

@@ -27,3 +27,14 @@ $local-config: (font-path: '/fonts',
         border-left: solid 1px $color-grey-200;
     }
 }
+
+.rm-select {
+
+
+    .select__control {
+        /*
+        min-height: magic-unit-rem(20);
+        min-width: magic-unit-rem(20);
+        padding: magic-unit-rem(2) 0;*/
+    }
+}

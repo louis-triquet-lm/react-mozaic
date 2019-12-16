@@ -7,6 +7,7 @@ import './story.scss';
 const ButtonStory = () => {
 	const [ invalid, setInvalid ] = useState(false);
 	const [ name, setName ] = useState('Sample label');
+	const [ checked, onChange ] = useState(false);
 
 	return (
 		<div className="button-story">
@@ -15,7 +16,7 @@ const ButtonStory = () => {
 				<TextInput value={name} onChange={setName} />
 			</div>
 			<div className="sandbox">
-				<Checkbox {...{ invalid, name }} />
+				<Checkbox {...{ invalid, name, checked, onChange }} />
 			</div>
 		</div>
 	);
