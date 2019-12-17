@@ -34,7 +34,7 @@ const SelectStory = () => {
 	);
 
 	return (
-		<div className="button-story">
+		<div className="story">
 			<div className="settings">
 				<Checkbox checked={valid} onChange={setValid} name="Valid" />
 				<Checkbox checked={invalid} onChange={setInvalid} name="Invalid" />

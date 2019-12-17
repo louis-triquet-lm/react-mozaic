@@ -18,7 +18,7 @@ const ButtonStory = () => {
 	);
 
 	return (
-		<div className="button-story">
+		<div className="story">
 			<div className="settings">
 				<Checkbox checked={invalid} onChange={setInvalid} name="Invalid" />
 				<Checkbox checked={disabled} onChange={setDisabled} name="Disabled" />

@@ -9,7 +9,7 @@ const variantOptions = [
 	{ label: 'Primary', value: 'primary' },
 	{ label: 'Primary-02', value: 'primary-02' },
 	{ label: 'Neutral', value: 'neutral' },
-	{ label: 'Danger', value: 'danger' },
+	{ label: 'Danger', value: 'danger' }
 ];
 
 const sizeOptions = [ { label: 'Small', value: 's' }, { label: 'Medium', value: 'm' }, { label: 'Large', value: 'l' } ];
@@ -30,11 +30,11 @@ const ButtonStory = () => {
 				: ''}${iconRight ? ' iconRight' : ''}>${text}</Button>`;
 			setSample(sample);
 		},
-		[bordered, icon, iconRight, size, text, variant]
+		[ bordered, icon, iconRight, size, text, variant ]
 	);
 
 	return (
-		<div className="button-story">
+		<div className="story">
 			<div className="settings">
 				<Select options={variantOptions} value={variant} onChange={setVariant} />
 				<Select options={sizeOptions} value={size} onChange={setSize} />
