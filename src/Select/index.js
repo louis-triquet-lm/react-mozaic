@@ -1,13 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactSelect from 'react-select';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { NavigationControlCross24px, NavigationArrowArrowBottom24px } from 'Icons';
 
 import 'styles/dist/index.css';
-import './select.scss';
 
-const DropdownIndicator = ({ innerProps, isDisabled }) =>
-	!isDisabled ? <div {...innerProps} className="dropdown-indicator" /> : null;
+const DropdownIndicator = (props) => {
+	const { children = <NavigationArrowArrowBottom24px />, getStyles, innerProps: { ref, ...restInnerProps } } = props;
+	return (
+		<div {...restInnerProps} ref={ref} style={getStyles('dropdownIndicator', props)}>
+			{children}
+		</div>
+	);
+};
+const ClearIndicator = (props) => {
+	const { children = <NavigationControlCross24px />, getStyles, innerProps: { ref, ...restInnerProps } } = props;
+	return (
+		<div {...restInnerProps} ref={ref} style={getStyles('clearIndicator', props)}>
+			{children}
+		</div>
+	);
+};
 
 const Select = ({
 	value,
@@ -23,12 +37,20 @@ const Select = ({
 	...props
 }) => {
 	const [ selectValue, setSelectValue ] = useState();
+	const [ calcPlaceholder, setCalcPlaceholder ] = useState();
 
 	useEffect(
 		() => {
 			options && setSelectValue(options.find((opt) => opt.value === value));
 		},
 		[ options, value ]
+	);
+
+	useEffect(
+		() => {
+			setCalcPlaceholder(placeholder ? `-- ${placeholder} --` : '');
+		},
+		[ placeholder ]
 	);
 
 	const handleChange = (option) => {
@@ -46,8 +68,8 @@ const Select = ({
 			options={options}
 			value={selectValue}
 			onChange={handleChange}
-			placeholder={placeholder}
-			components={{ DropdownIndicator }}
+			placeholder={calcPlaceholder}
+			components={{ DropdownIndicator, ClearIndicator }}
 			{...props}
 		/>
 	);
@@ -60,7 +82,10 @@ Select.propTypes = {
 	className: PropTypes.string,
 	placeholder: PropTypes.string,
 	clearable: PropTypes.bool,
-	searchable: PropTypes.bool
+	searchable: PropTypes.bool,
+	valid: PropTypes.bool,
+	invalid: PropTypes.bool,
+	disabled: PropTypes.bool
 };
 
 Select.defaultProps = {
@@ -69,7 +94,10 @@ Select.defaultProps = {
 	className: '',
 	placeholder: '',
 	clearable: false,
-	searchable: false
+	searchable: false,
+	valid: false,
+	invalid: false,
+	disabled: false
 };
 
 export default Select;

@@ -34,10 +34,11 @@ $local-config: (font-path: '/fonts',
     font-family: 'LeroyMerlin', sans-serif;
     font-weight: 400;
 
+
     .select__control {
         @include reset-input;
         @include set-font-scale('05');
-        @include select-background-arrow();
+        //@include select-background-arrow();
 
         border: $select-border-width solid $color-input-border;
         border-radius: $select-border-radius;
@@ -64,8 +65,8 @@ $local-config: (font-path: '/fonts',
 
     &.select--is-disabled {
         .select__control {
-            @include select-background-arrow($color-input-placeholder,
-                $color-input-disabled-background);
+            //@include select-background-arrow($color-input-placeholder,
+            //  $color-input-disabled-background);
 
             border-color: $color-input-disabled-border;
             color: $color-input-placeholder;
@@ -84,4 +85,5 @@ $local-config: (font-path: '/fonts',
             border-color: $color-success-500;
         }
     }
+
 }

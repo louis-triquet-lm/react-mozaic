@@ -871,8 +871,6 @@
   border: none;
   font-size: 1rem;
   line-height: 1.5;
-  background: #ffffff url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyMjIwMjAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
-  background-size: 1.5rem;
   border: 1px solid #6f676c;
   border-radius: 4px;
   color: #222020;
@@ -892,8 +890,6 @@
 }
 
 .rm-select.select--is-disabled .select__control {
-  background: #eeeef0 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM4ODdmODciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLjcxIDE3LjIxYTEgMSAwIDAgMS0xLjQyIDBsLTktOWExIDEgMCAxIDEgMS40Mi0xLjQybDguMjkgOC4zIDguMjktOC4zYTEgMSAwIDEgMSAxLjQyIDEuNDJ6Ii8+PC9zdmc+') right 1rem center no-repeat;
-  background-size: 1.5rem;
   border-color: #eeeef0;
   color: #887f87;
   cursor: default;
