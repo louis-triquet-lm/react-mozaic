@@ -9,7 +9,7 @@ const variantOptions = [
 	{ label: 'Primary', value: 'primary' },
 	{ label: 'Primary-02', value: 'primary-02' },
 	{ label: 'Neutral', value: 'neutral' },
-	{ label: 'Danger', value: 'danger' }
+	{ label: 'Danger', value: 'danger' },
 ];
 
 const sizeOptions = [ { label: 'Small', value: 's' }, { label: 'Medium', value: 'm' }, { label: 'Large', value: 'l' } ];
@@ -36,7 +36,7 @@ const ButtonStory = () => {
 	return (
 		<div className="story">
 			<div className="settings">
-				<Select options={variantOptions} value={variant} onChange={setVariant} />
+				<Select options={variantOptions} value={variant} onChange={setVariant} invalid />
 				<Select options={sizeOptions} value={size} onChange={setSize} />
 				<TextInput value={text} onChange={setText} />
 				<Checkbox checked={bordered} onChange={setBordered} name="Bordered" />

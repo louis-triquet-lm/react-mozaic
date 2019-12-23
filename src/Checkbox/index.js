@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import 'styles/dist/index.css';
+import './checkbox.css';
 
 export const CheckboxInput = ({ checked, onChange, invalid, ...props }) => {
 	const handleChange = (e) => {
@@ -25,7 +25,7 @@ const Checkbox = ({ className, name, ...props }) => {
 	return (
 		<span className={classNames('rm-checkbox', className)}>
 			<CheckboxInput id={id.current} {...props} />
-			<label for={id.current} className="rm-checkbox__label">
+			<label htmlFor={id.current} className="rm-checkbox__label">
 				{name}
 			</label>
 		</span>

@@ -10,7 +10,6 @@
     .select__control {
         @include reset-input;
         @include set-font-scale('05');
-        //@include select-background-arrow();
 
         border: $select-border-width solid $color-input-border;
         border-radius: $select-border-radius;
@@ -37,9 +36,6 @@
 
     &.select--is-disabled {
         .select__control {
-            //@include select-background-arrow($color-input-placeholder,
-            //  $color-input-disabled-background);
-
             border-color: $color-input-disabled-border;
             color: $color-input-placeholder;
             cursor: default;

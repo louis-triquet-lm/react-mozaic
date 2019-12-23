@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import 'styles/dist/index.css';
+import './button.css'
 
 const prefix = 'mc-button--';
 

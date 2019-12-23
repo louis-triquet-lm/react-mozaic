@@ -22,8 +22,8 @@
         "storybook": "start-storybook",
         "css:lint-fix": "npx stylelint src/*.scss --fix",
         "statics:copy": "rm -rf public/fonts && mkdir public/fonts && cp node_modules/@mozaic-ds/web-fonts/*.woff public/fonts && cp node_modules/@mozaic-ds/web-fonts/*.woff2 public/fonts",
-        "build:css": "postcss src/styles/main.scss -o src/styles/dist/index.css",
-        "watch:css": "postcss src/styles/main.scss -o src/styles/dist/index.css -w",
+        "build:css": "postcss src/**/*.scss --base src --dir src --ext css",
+        "watch:css": "postcss src/**/*.scss --base src --dir src --ext css -w",
         "start": "./scripts/start.sh",
         "start-js": "react-scripts start",
         "build-js": "react-scripts build",
@@ -35,16 +35,8 @@
         "extends": "react-app"
     },
     "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+        "production": [">0.2%", "not dead", "not op_mini all"],
+        "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
     },
     "devDependencies": {
         "@storybook/addon-info": "^5.2.8",

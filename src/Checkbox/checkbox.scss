@@ -1,0 +1,23 @@
+@import 'settings-tools/_all-settings';
+@import 'components/_c.checkbox';
+@include import-font-families();
+
+.rm-checkbox {
+    @include set-font-face('regular');
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+
+    .rm-checkbox__item {
+        @include set-flexy;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .rm-checkbox__label {
+        padding-left: $mu100;
+        margin-left: $mu100;
+        border-left: solid 1px $color-grey-200;
+        cursor: pointer;
+    }
+}

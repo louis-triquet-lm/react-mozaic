@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import 'styles/dist/index.css';
+import './textinput.css'
 
 const Input = ({ value, onChange, valid, invalid, className, ...props }) => {
 	const handleChange = (e) => {
@@ -36,31 +36,31 @@ Input.propTypes = {
 	className: PropTypes.string,
 	valid: PropTypes.bool,
 	invalid: PropTypes.bool,
-	onChange: PropTypes.func.isRequired
+	onChange: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {
 	value: '',
 	className: '',
 	valid: false,
-	invalid: false
+	invalid: false,
 };
 
 LeftIconInput.propTypes = {
 	Icon: PropTypes.func.isRequired,
-	className: PropTypes.string
+	className: PropTypes.string,
 };
 
 LeftIconInput.defaultProps = {
-	className: ''
+	className: '',
 };
 
 TextInput.propTypes = {
-	Icon: PropTypes.func
+	Icon: PropTypes.func,
 };
 
 TextInput.defaultProps = {
-	Icon: null
+	Icon: null,
 };
 
 export default TextInput;
