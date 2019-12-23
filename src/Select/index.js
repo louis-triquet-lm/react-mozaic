@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { NavigationControlCross24px, NavigationArrowArrowBottom24px } from 'Icons';
 
-import 'styles/dist/index.css';
+import './select.css';
 
 const DropdownIndicator = (props) => {
 	const { children = <NavigationArrowArrowBottom24px />, getStyles, innerProps: { ref, ...restInnerProps } } = props;
@@ -85,7 +85,7 @@ Select.propTypes = {
 	searchable: PropTypes.bool,
 	valid: PropTypes.bool,
 	invalid: PropTypes.bool,
-	disabled: PropTypes.bool
+	disabled: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -97,7 +97,7 @@ Select.defaultProps = {
 	searchable: false,
 	valid: false,
 	invalid: false,
-	disabled: false
+	disabled: false,
 };
 
 export default Select;

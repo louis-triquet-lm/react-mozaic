@@ -1,0 +1,61 @@
+@import 'settings-tools/_all-settings';
+@import 'components/_c.select';
+
+.rm-select {
+    width: 100%;
+    font-family: 'LeroyMerlin', sans-serif;
+    font-weight: 400;
+
+
+    .select__control {
+        @include reset-input;
+        @include set-font-scale('05');
+        //@include select-background-arrow();
+
+        border: $select-border-width solid $color-input-border;
+        border-radius: $select-border-radius;
+        color: $color-input-text;
+        width: 100%;
+        // remove border height and center baseline optically
+        padding: calc(#{$mu075} - 0.125em - #{$select-border-width}) $mu075 calc(#{$mu075} + 0.125em - #{$select-border-width});
+        transition: border-color ease 200ms;
+
+        &:hover {
+            @include add-demo-state-class {
+                border-color: $color-input-hover-border;
+            }
+        }
+
+        &:focus {
+            @include add-demo-state-class {
+                border-color: $color-input-focus-border;
+            }
+        }
+
+        .dropdown-indicator {}
+    }
+
+    &.select--is-disabled {
+        .select__control {
+            //@include select-background-arrow($color-input-placeholder,
+            //  $color-input-disabled-background);
+
+            border-color: $color-input-disabled-border;
+            color: $color-input-placeholder;
+            cursor: default;
+        }
+    }
+
+    &.is-invalid {
+        .select__control {
+            border-color: $color-danger-500;
+        }
+    }
+
+    &.is-valid {
+        .select__control {
+            border-color: $color-success-500;
+        }
+    }
+
+}
